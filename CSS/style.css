@@ -1,0 +1,373 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    
+}
+
+/* Design for navigation_bar */
+
+.nav_bar{
+    height: 72px;
+    width: 100%;
+    background-color: #0b034a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.nav_link{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: aqua; */
+}
+
+.anker_tags{
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    color: white;
+     font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+select{
+    background-color: #0b034a;
+}
+li a{
+    color: #ffffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logo span{
+    color: red;
+}
+
+ul{
+    height: 30px;
+    width: 450px;
+    list-style: none;
+    display: flex; 
+    align-items: center;
+
+}
+
+ul img{
+    height: 60px;
+    margin-left: 20px;
+}
+
+li{
+margin-left: 20px;    
+}
+
+.Right_bar{
+    height: 40px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+}
+
+.search_option{
+    height: 32px;
+    width: 320px;
+    background-color: #2e374ad1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.5px solid white;
+    border-radius: 6px;
+    
+}
+
+.input_here{
+    color:#ffffffbf;
+    width: 252px;
+    height: 22px;
+    background-color: #2e374ad1;
+    border:1px solid #2e374ad1;
+}
+
+.input_here::placeholder{
+    color: #ffffffbf;
+}
+
+.search_option #mag1{
+    margin-left: 10px;
+    
+}
+.search_option #mag2{
+    margin-right: 10px;
+    
+}
+
+
+.Right_bar a {
+    padding: 4px 12px;
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* ........................................................................................................................................................................... */
+/* CSS for section_2 */
+
+.section_2{
+    height: 600px;
+    width: 100%;
+    background-color: #0b034a;
+    display: flex;
+    align-items: center;
+    
+}
+
+.intro_text{
+    height: 00px;
+    width: 50%;
+    color: white;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
+
+}
+
+.intro_text h1{
+    margin-top: 200px;
+    margin-right: 120px;
+    margin-left: 80px;
+    font-size: 38px;
+}
+
+.logo{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    /* background-color: black; */
+}
+
+.logo img{
+    margin-top: 200px;
+    margin-left: 290px;
+    height: 350px;
+}
+
+.registration{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #0b034a;
+
+}
+
+.registration .register_here{
+    margin-bottom: 140px;
+    background-color: white;
+    height: 56px;
+    width: 476px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+}
+.registration .register_here input{
+    margin-left: 10px;
+    height: 48px;
+    width: 290px;
+    border-radius: 6px;
+}
+
+.registration .register_here input::placeholder{
+color: black;
+
+}
+
+
+.registration .register_here .sign_cl{
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    height: 48px;
+    width: 200px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight:bolder;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.registration .demo{
+    margin-bottom: 140px;
+    background-color: #1f232866;
+    height: 56px;
+    width: 204px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-left: 20px;
+    border: 2px solid white;
+
+
+}
+
+.registration .demo a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffffffff;
+}
+
+/* ...................................................................................................................... */
+/* Section 3 */
+.section3{
+    width: 100%;
+    height: 704px;
+    background-color: #0b034a;
+    display: flex;
+    justify-content: center;
+}
+
+.section3 .short_contain{
+    height: 704px;
+    width: 1246px;
+    background-color: #ffffff26;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* .................................................................................................................................. */
+/* CSS for section 4 */
+
+.section4{
+    height: 240.59px;
+    width: 100%;
+    background-color: #040015;
+    padding: 32px 24px 0px;
+
+}
+
+.sub_section4{
+    height: 200px;
+    /* background-color: #ffffff; */
+
+}
+
+.sub_section4 .bar{
+    height: 58px;
+    /* background-color: red; */
+    display: flex;
+    justify-content:center;
+}
+
+.bar_link{
+    width: 682px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+
+
+.sub_section4 .bar .bar_link a{
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.abc{
+    height: 35px;
+    width: 120px;
+    border: 2px solid darkgray;
+    border-radius: 30px;
+    background-color: #2e374ad1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.sub_section4 .text_section4{
+    height: 200.58px;
+    /* background-color: aqua; */
+    
+}
+
+.text_here{
+    margin: 0px 398.25px 0px;
+    height: 190.58px;
+    /* background-color: orange; */
+    color: #8b949e;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.text_here p{
+    margin-top: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* .................................................................................................................... */
+/* CSS for section 5 */
+
+.section5{
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 20px 0;
+      background-color: #040015;
+    }
+
+
+.language_container{
+ 
+    display: flex;
+    width: fit-content;
+    animation: scroll 15s linear infinite;
+}
+
+.language_container img{
+    width: 200px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+@keyframes scroll{
+   0% { transform: translateX(0);
+}
+   100%{transform: translate(-50%);
+}
+}
+
+
+
+
