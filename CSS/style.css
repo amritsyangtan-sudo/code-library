@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     border: 0px;
     
 }
@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 999;
 }
 
 .nav_link{
@@ -369,5 +370,566 @@ color: black;
 }
 
 
+/* ........................................................................................................................................................... */
+/* Section6 */
+.section6{
+    height: 100%;
+    width: 100%;
+    background-color: #0b034a;
+    color: white;
+  
+   
+    
+}
+
+.section6 h1{
+    margin-left: 270px;
+    font-size: 44px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    animation:
+    typing 4s steps(40, end), 
+    blink 0.7s step-end infinite;
+    width: fit-content;
+    padding: 70px 0px 0px 0px;
+}
+
+   @keyframes typing {
+      from { width: 0 }
+      to { width: 58ch } /* ch = character units */
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
 
 
+
+.section6_container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section6_container .section6_text{
+    height: 200px;
+    width: 600px;
+    margin-right: 400px;
+    /* background-color: red; */
+    animation: text_slide 2s ease-in-out forwards;
+}
+
+@keyframes text_slide{
+    0%{
+       transform: translateX(0); 
+    }
+
+    100%{
+        transform: translateX(100px);
+    }
+}
+
+
+.section6_container .section6_text p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:   00;
+    font-size: 20px;
+    transition: all 0.5s ease;
+
+}
+
+
+.section6_container .section6_text p:hover{
+
+    transform: scale(1.10);
+    color: crimson;
+}
+
+
+
+
+
+.section6_img {
+  width: 400px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden; /* important to clip image corners */
+  /* background-color: red; */
+}
+
+.section6_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 100px;
+  transition: all 0.5s ease;
+}
+
+.section6_img img:hover{
+     transform: scale(1.10);
+}
+
+
+@keyframes img_slide{
+    0%{
+       transform: translateX(0); 
+    }
+
+    100%{
+        transform: translateX(-100px);
+    }
+}
+
+
+/* ............................................................................................. */
+/* Animated videos and text */
+.animated_video{
+    height: 500px;
+    width: auto;
+    background-color:#040015;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.text_1{
+    color: #ffffff;
+    /* background-color: blue; */
+    height: 300px;
+    width: 400px;
+    margin-right: 100px;   
+    animation: video_slide 2s ease-in-out forwards;
+
+
+}
+
+
+
+.video_1 video{
+    height: 300px;
+    width: auto;
+    margin-left: 100px;
+    animation: text_slide 2s ease-in-out forwards;
+
+
+}
+
+
+.animated_video2{
+    height: 700px;
+    width: auto;
+    background-color:#040015;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.text_2{
+
+    color: #ffffff;
+    /* background-color: blue; */
+    height: 400px;
+    width: 400px;
+    margin-left: 100px; 
+    animation: text_slide 2s ease-in-out forwards; 
+   
+
+}
+
+
+
+
+.video2 video{
+    height: 300px;
+    width: auto;
+    margin-right: 80px;
+     animation: video_slide 2s ease-in-out forwards;
+}
+
+
+@keyframes video_slide{
+    0%{
+       transform: translateX(0); 
+    }
+
+    100%{
+        transform: translateX(-100px);
+    }
+}
+
+
+
+/* ................................................................................ */
+/* Just practice js */
+/* Add these classes */
+.section6_text, .section6_img {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+
+.section6_text.in-view {
+  opacity: 1;
+  transform: translateX(100px);
+}
+
+.section6_img.in-view {
+  opacity: 1;
+  transform: translateX(-100px);
+}
+
+
+/* ................................................................. */
+/* Icons float from here */
+.floating{
+    height: 850px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: #040015;
+    color: #ffffff;
+}
+.floating-icons {
+    height: 400px;
+    width: 50%;
+ 
+}
+
+.float-icon {
+    margin-top: 30px;
+  height: 200px;
+  width: 200px;
+  animation: float 2s ease-in-out infinite;
+}
+
+
+/* Floating animation */
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Optional stagger delays */
+.delay1 { animation-delay: 0s; }
+.delay2 { animation-delay: 0.3s; }
+.delay3 { animation-delay: 0.6s; }
+.delay4 { animation-delay: 0.9s; }
+
+
+
+/* ............................................................................................... */
+/* button */
+.button_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+button{
+    background-color: green;
+    height: 50px;
+    width: 200px;
+    border: 3px solid white;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 1s ease ;
+}
+
+button:hover{
+    transform: scale(1.10);
+}
+
+/* ............................................................. */
+/* Image container */
+
+.image_only{
+    margin-top: 10px;
+    height: 500px;
+    width: 900px;
+    border:2px solid white;
+    text-align: center;
+    border-radius: 20px;
+    border-top: 2px solid red;
+    border-left: 2px solid red;
+    transition: all 1s ease-in-out forwards;
+
+}
+
+
+
+
+/* ........................................................... */
+/* Section7 motivation_container1 */
+
+.motivation_container1, .motivation_container2{
+    background-color: #040015;
+    height: 400px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 200px;
+    
+}
+
+
+.motivation_img1{
+    height: 300px;
+    width: 500px;
+    background-color: #040015;
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+    margin-top: 80px;
+
+}
+
+
+.motivation_img1 img{
+    width: 100px;
+    height: 100px;
+    animation: jump 2s ease-in-out infinite;
+}
+
+
+@keyframes jump{
+    0%{transform:translateY(0) ;}
+    50%{transform:translateY(100px) ;}
+    100%{transform:translateY(0) ;}
+}
+
+
+
+
+/* put delay on animation */
+
+.motivation_img1 .img1{animation-delay: 1s;}
+.motivation_img1 .img2{animation-delay: 2s;}
+.motivation_img1 .img3{animation-delay: 3s;}
+
+
+.motivation1{
+    height: 200px;
+    /* background-color: red; */
+    width: 400px;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 200px;
+
+}
+
+/* ........................................................... */
+/* Section7 motivation_container2 */
+
+.motivation2{
+    height: 200px;
+    /* background-color: red; */
+    width: 400px;
+    text-align: center;
+    color: #ffffff;
+    margin-left: 200px;
+    margin-top: 20px;
+
+}
+
+.motivation_img2{
+    height: 300px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+
+}
+
+
+.motivation_img2 img{
+    width: 800px;
+    height: 400px;
+    animation: jump_2 2s ease-in-out infinite;
+}
+
+
+
+@keyframes jump_2{
+  
+   
+    0%{transform:translateX(0) ;}
+    50%{transform:translateX(-800px) ;}
+    100%{transform:rotate(0) ;}
+   
+}
+
+
+/* ............................................................. */
+/* New section for blub */
+.section_8 {
+  height: 800px;
+  width: 100%;
+  background-color: #040015;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.blub {
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  border-top: 4px solid white;
+  border-bottom: 4px solid rgb(201, 27, 27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate_blub 6s linear infinite;
+  position: relative;
+}
+
+.blub-content {
+  animation: counter_rotate 6s linear infinite;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blub-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.blub-inner img {
+  height: 300px;
+  width: 400px;
+  object-fit: contain;
+  transition: transform 0.5s ease-in-out;
+}
+
+.blub-inner img:hover {
+  transform: scale(1.10);
+}
+
+.blub-inner h1 {
+  font-size: 26px;
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+
+@keyframes rotate_blub {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes counter_rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+
+/* ....................................................
+/*Css for footer*/
+/* Main content box */
+.footer-container {
+  background: #040015; /* dark background */
+  color: white;
+  padding: 20px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+/* Animated top line */
+.line-runner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, 
+    #00FFFF, 
+    #FF00FF, 
+    #00FF00, 
+    #FFFF00, 
+    #00FFFF);
+  background-size: 400% 100%;
+  animation: moveLine 3s linear infinite;
+  box-shadow: 0 0 10px #00FFFF;
+}
+
+/* Animation for running effect */
+@keyframes moveLine {
+  0% { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
+}
+
+
+.data-container{
+    height: 300px;
+    width: 100%;
+}
+
+
+.logo-footer{
+  
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.logo-footer img{
+    margin-top: 150px;
+    height: 300px;
+    width: 400px;
+    margin-bottom:150px;
+}
+
+.footer-text{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.footer-text h3{
+    font-size: 18px;
+}
+
+.apply_to_all{
+    text-align: center;
+}
+
+.end-footer{
+height: 100px;
+width: 100%;
+color: #ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 5px;
+flex-direction: column;
+background-color: #040015;
+
+}
