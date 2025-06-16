@@ -32,17 +32,16 @@
             <input type="text" placeholder="Search..." />
             <div class="filter-group">
                 <h4>Course Category</h4>
-                <label><input type="checkbox" checked /> UI/UX</label>
-                <label><input type="checkbox" /> Web Development</label>
-                <label><input type="checkbox" /> Programming</label>
-                <label><input type="checkbox" /> Game Development</label>
+                <label><input type="checkbox" id="filter-programming"/> Programming</label>
+                <label><input type="checkbox" id="filter-framework"/> Framework</label>
             </div>
 
             <div class="filter-group">
                 <h4>Course Instructor</h4>
-                <label><input type="checkbox" checked /> Ronald Jackson</label>
-                <label><input type="checkbox" /> John Dee</label>
-                <label><input type="checkbox" /> Tony Griffin</label>
+                <label><input type="checkbox" checked /> Amrit Syangtan</label>
+                <label><input type="checkbox" /> Sujan Shrestha</label>
+                <label><input type="checkbox" /> Mohan Shrestha</label>
+                <label><input type="checkbox" /> Amit Ghimire</label>
             </div>
 
             <div class="filter-group">
@@ -55,7 +54,7 @@
        
         <!-- Course Grid -->
         <main class="course-grid">
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/java.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -74,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/python.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -93,7 +92,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/csharp.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -112,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/go.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -131,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/rust.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -150,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/perl.png" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -169,7 +168,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/javascript.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -188,7 +187,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/ruby.png" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -207,7 +206,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Programming">
                 <img src="../image/fsharp.jpg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
@@ -225,7 +224,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Framework">
                 <img src="../image/dotnet.png" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Framework</span>
@@ -243,7 +242,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Framework">
                 <img src="../image/mldotnet.png" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Framework</span>
@@ -261,7 +260,7 @@
                     </div>
                 </div>
             </div>
-            <div class="course-card">
+            <div class="course-card" data-category="Framework">
                 <img src="../image/django.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Framework</span>
@@ -282,5 +281,38 @@
         </main>
 
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const frameworkCheckbox = document.getElementById("filter-framework");
+    const programmingCheckbox = document.getElementById("filter-programming");
+    const courseCards = document.querySelectorAll(".course-card");
+
+    function filterCourses() {
+        const showFramework = frameworkCheckbox.checked;
+        const showProgramming = programmingCheckbox.checked;
+
+        courseCards.forEach(card => {
+            const category = card.getAttribute("data-category");
+
+            if (
+                (category === "Framework" && showFramework) ||
+                (category === "Programming" && showProgramming)
+            ) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // If none selected, show all
+        if (!showFramework && !showProgramming) {
+            courseCards.forEach(card => card.style.display = "block");
+        }
+    }
+
+    frameworkCheckbox.addEventListener("change", filterCourses);
+    programmingCheckbox.addEventListener("change", filterCourses);
+});
+</script>
 
 </html>
