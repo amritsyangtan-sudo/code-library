@@ -11,29 +11,39 @@
 <body>
     <nav class="program-navbar">
         <div class="program-navbar-left">
-            <img src="../IMAGE/image.png" alt="logo" style="height:65px;width:65px;margin-left:-20px" />
-            <a>HOME</a>
+            <div class="logo-container">
+                <div class="logo-placeholder"></div>
+                <span class="brand-text">Code Library</span>
+            </div>
+            <a href="#" class="nav-link">HOME</a>
         </div>
+
         <div class="program-navbar-search">
-            <input type="text" placeholder="    Search Courses" />
-            <i class="search"></i>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search courses, tutorials, and more..." />
+                <div class="search-icon"></div>
+            </div>
         </div>
+
         <div class="program-navbar-right">
-            <a href="#">Code Library</a>
-            <a href="#">Teach on Code Library</a>
-            <button class="login-btn">Browse all courses</button>
-            <button class="signup-btn">Sign Up</button>
-            <i class=""></i>
+            <a href="#" class="nav-link">Code Library</a>
+            <a href="#" class="nav-link">Teach on Code Library</a>
+            <button class="btn btn-outline">Browse Courses</button>
+            <button class="btn btn-primary">Sign Up</button>
         </div>
     </nav>
+
+    <div class="demo-content">
+        <h1>Welcome to Code Library Courses</h1>
+    </div>
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
             <input type="text" placeholder="Search..." />
             <div class="filter-group">
                 <h4>Course Category</h4>
-                <label><input type="checkbox" id="filter-programming"/> Programming</label>
-                <label><input type="checkbox" id="filter-framework"/> Framework</label>
+                <label><input type="checkbox" id="filter-programming" /> Programming</label>
+                <label><input type="checkbox" id="filter-framework" /> Framework</label>
             </div>
 
             <div class="filter-group">
@@ -51,13 +61,14 @@
                 <label><input type="checkbox" /> Advanced</label>
             </div>
         </aside>
-       
+
         <!-- Course Grid -->
         <main class="course-grid">
             <div class="course-card" data-category="Programming">
                 <img src="../image/java.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
+                    <span class="course-tag">Intermediate</span>
                     <a href="#" class="course-heading-anchor">
                         <h3 class="course-heading">JAVA Programming</h3>
                     </a>
@@ -77,6 +88,7 @@
                 <img src="../image/python.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
+                    <span class="course-tag">Begineer</span>
                     <a href="#" class="course-heading-anchor">
                         <h3 class="course-heading">PYTHON Programming</h3>
                     </a>
@@ -96,6 +108,7 @@
                 <img src="../image/csharp.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
+                    <span class="course-tag">Advanced</span>
                     <a href="#" class="course-heading-anchor">
                         <h3 class="course-heading">C# Programming</h3>
                     </a>
@@ -115,6 +128,7 @@
                 <img src="../image/go.jpeg" alt="JAVA Course Image" />
                 <div class="course-info">
                     <span class="course-tag">Programming</span>
+                    <span class="course-tag">Intermediate</span>
                     <a href="#" class="course-heading-anchor">
                         <h3 class="course-heading">Golang Programming</h3>
                     </a>
@@ -232,7 +246,8 @@
                         <h3 class="course-heading">.NET Core Framework</h3>
                     </a>
                     <p class="course-description">
-                        This comprehensive NET Core Framework Masterclass covers the fundamentals to advanced concepts, including
+                        This comprehensive NET Core Framework Masterclass covers the fundamentals to advanced concepts,
+                        including
                         object-oriented programming, data structures, multithreading, Design Patterns aiming to build
                         real-world applications with real experience.
                     </p>
@@ -250,7 +265,8 @@
                         <h3 class="course-heading">ML.NET Framework</h3>
                     </a>
                     <p class="course-description">
-                        This comprehensive ML.NET Framework Masterclass covers the fundamentals to advanced concepts, including
+                        This comprehensive ML.NET Framework Masterclass covers the fundamentals to advanced concepts,
+                        including
                         object-oriented programming, data structures, multithreading, Design Patterns aiming to build
                         real-world applications with real experience.
                     </p>
@@ -268,7 +284,8 @@
                         <h3 class="course-heading">DJANGO Framework</h3>
                     </a>
                     <p class="course-description">
-                        This comprehensive Django Framework Masterclass covers the fundamentals to advanced concepts, including
+                        This comprehensive Django Framework Masterclass covers the fundamentals to advanced concepts,
+                        including
                         object-oriented programming, data structures, multithreading, Design Patterns aiming to build
                         real-world applications with real experience.
                     </p>
@@ -282,37 +299,38 @@
 
 </body>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const frameworkCheckbox = document.getElementById("filter-framework");
-    const programmingCheckbox = document.getElementById("filter-programming");
-    const courseCards = document.querySelectorAll(".course-card");
+    document.addEventListener("DOMContentLoaded", function () {
+        const frameworkCheckbox = document.getElementById("filter-framework");
+        const programmingCheckbox = document.getElementById("filter-programming");
+        const courseCards = document.querySelectorAll(".course-card");
 
-    function filterCourses() {
-        const showFramework = frameworkCheckbox.checked;
-        const showProgramming = programmingCheckbox.checked;
+        function filterCourses() {
+            const showFramework = frameworkCheckbox.checked;
+            const showProgramming = programmingCheckbox.checked;
 
-        courseCards.forEach(card => {
-            const category = card.getAttribute("data-category");
+            courseCards.forEach(card => {
+                const category = card.getAttribute("data-category");
 
-            if (
-                (category === "Framework" && showFramework) ||
-                (category === "Programming" && showProgramming)
-            ) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
+                if (
+                    (category === "Framework" && showFramework) ||
+                    (category === "Programming" && showProgramming)
+                ) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // If none selected, show all
+            if (!showFramework && !showProgramming) {
+                courseCards.forEach(card => card.style.display = "block");
             }
-        });
-
-        // If none selected, show all
-        if (!showFramework && !showProgramming) {
-            courseCards.forEach(card => card.style.display = "block");
         }
-    }
 
-    frameworkCheckbox.addEventListener("change", filterCourses);
-    programmingCheckbox.addEventListener("change", filterCourses);
-});
+        frameworkCheckbox.addEventListener("change", filterCourses);
+        programmingCheckbox.addEventListener("change", filterCourses);
+    });
+
 </script>
 
 </html>
