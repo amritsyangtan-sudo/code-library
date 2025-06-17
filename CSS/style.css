@@ -1,7 +1,9 @@
 *{
-    margin: 0px;
-    padding: 0px;
+
+    margin: 0;
+    padding: 0;
     border: 0px;
+    box-sizing: border-box;
     
 }
 
@@ -31,6 +33,8 @@
     height: 40px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+
 }
 
 .logo{
@@ -42,7 +46,7 @@
 select{
     background-color: #0b034a;
 }
-li a{
+.li a{
     color: #ffffffff;
     text-decoration: none;
     font-size: 16px;
@@ -53,23 +57,70 @@ li a{
     color: red;
 }
 
-ul{
+
+
+.li{
+    position: relative;
+    display: flex;
+
+}
+
+ .popup{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    height: 150px;
+    width: 100px;
+    white-space: nowrap;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    padding: 15px;
+    box-shadow: 0 0 10px rgb(240, 240, 200, 1);
+    /* transition: background-color 0.3s; */    
+    z-index: 10;
+    cursor: pointer;
+   
+
+
+}
+
+ .popup li{
+    margin-top: 10px;
+    list-style: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+ }
+
+ .li:hover .popup, .popup:hover{
+
+display: block;
+ }
+
+.popup li:hover{
+    background-color: aqua;
+}
+.ul{
     height: 30px;
     width: 450px;
     list-style: none;
     display: flex; 
     align-items: center;
+    justify-content: space-around;
 
 }
 
-ul img{
+.ul img{
     height: 60px;
     margin-left: 20px;
 }
 
-li{
-margin-left: 20px;    
-}
+/* .li{
+margin-left: 100px;    
+} */
 
 .Right_bar{
     height: 40px;
@@ -265,6 +316,7 @@ color: black;
     width: 100%;
     background-color: #040015;
     padding: 32px 24px 0px;
+    position: relative;
 
 }
 
@@ -331,6 +383,9 @@ color: black;
 .text_here p{
     margin-top: 25px;
     font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 90px;
+    left: 610px
 }
 
 
@@ -412,6 +467,7 @@ color: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 }
 
 .section6_container .section6_text{
@@ -438,6 +494,8 @@ color: black;
     font-weight:   00;
     font-size: 20px;
     transition: all 0.5s ease;
+    position: absolute;
+    top: 0;
 
 }
 
@@ -549,6 +607,7 @@ color: black;
     height: 300px;
     width: auto;
     margin-right: 80px;
+    margin-top: 90px;
      animation: video_slide 2s ease-in-out forwards;
 }
 
@@ -587,6 +646,79 @@ color: black;
 
 /* ................................................................. */
 /* Icons float from here */
+.collection{
+    margin: 0 auto;
+    height: 600px;
+    width: 800px;
+    background-color: #0b034a;
+    position: relative;
+    top: 10px;
+    border-radius: 10px;
+
+    
+}
+
+.collection img{
+    height: 180px;
+    width: 250px;
+}
+
+        @property  --angle{
+
+            syntax: "<angle>";
+            initial-value: 0deg ;
+            inherits: false;
+
+        }
+
+
+.collection::after, .collection::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    /* background-image: conic-gradient(red, yellow, blue, orange, red); */
+    background-image: conic-gradient(from var(--angle), transparent 10%, red, yellow, blue, orange, red); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+
+}
+
+
+.collection::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+  @keyframes spin{
+            from{
+                 --angle: 0deg;}
+        
+
+        to{
+            --angle: 360deg;
+
+        }
+        }   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .floating{
     height: 850px;
     width: auto;
@@ -595,10 +727,14 @@ color: black;
     /* align-items: center; */
     background-color: #040015;
     color: #ffffff;
+     position: relative;
+    z-index: 1;
 }
 .floating-icons {
     height: 400px;
     width: 50%;
+    
+
  
 }
 
@@ -634,7 +770,7 @@ color: black;
     margin-right: 50px;
 }
 
-button{
+.button-start{
     background-color: green;
     height: 50px;
     width: 200px;
@@ -644,9 +780,10 @@ button{
     font-weight: 900;
     font-family: Arial, Helvetica, sans-serif;
     transition: all 1s ease ;
+    cursor: pointer;
 }
 
-button:hover{
+.button-start:hover{
     transform: scale(1.10);
 }
 
@@ -671,6 +808,69 @@ button:hover{
 
 /* ........................................................... */
 /* Section7 motivation_container1 */
+.collection{
+    margin: 0 auto;
+    height: 600px;
+    width: 800px;
+    background-color: #040015;
+    position: relative;     
+    top: 340px;
+    left: 530px;
+    border-radius: 10px;
+    position: absolute;
+    /* z-index: ; */
+
+    
+}
+
+.collection img{
+    height: 180px;
+    width: 250px;
+}
+
+        @property  --angle{
+
+            syntax: "<angle>";
+            initial-value: 0deg ;
+            inherits: false;
+
+        }
+
+
+.collection::after, .collection::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    /* background-image: conic-gradient(red, yellow, blue, orange, red); */
+    background-image: conic-gradient(from var(--angle), transparent 10%, red, yellow, blue, orange, red); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+
+}
+
+
+.collection::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+  @keyframes spin{
+            from{
+                 --angle: 0deg;}
+        
+
+        to{
+            --angle: 360deg;
+
+        }
+        }
+
 
 .motivation_container1, .motivation_container2{
     background-color: #040015;
@@ -679,6 +879,7 @@ button:hover{
     display: flex;
     justify-content: space-between;
     padding-top: 200px;
+    position: relative;
     
 }
 
@@ -725,6 +926,7 @@ button:hover{
     text-align: center;
     color: #ffffff;
     margin-right: 200px;
+    position: relative;
 
 }
 
@@ -739,6 +941,7 @@ button:hover{
     color: #ffffff;
     margin-left: 200px;
     margin-top: 20px;
+    position: relative;
 
 }
 
@@ -748,11 +951,14 @@ button:hover{
     display: flex;
     justify-content: center;
     margin-left: 100px;
+    position: absolute;
+    top: 170px;
+    right: 0;
 
 }
 
 
-.motivation_img2 img{
+.motivation_img2 img{   
     width: 800px;
     height: 400px;
     animation: jump_2 2s ease-in-out infinite;
@@ -841,95 +1047,116 @@ button:hover{
 
 
 /* ....................................................
-/*Css for footer*/
-/* Main content box */
-.footer-container {
-  background: #040015; /* dark background */
-  color: white;
-  padding: 20px;
-  width: 100%;
-  height: 500px;
-  position: relative;
-  overflow: hidden;
+/* ........................................ */
 
-}
+/* footer-section */
 
-/* Animated top line */
-.line-runner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background: linear-gradient(90deg, 
-    #00FFFF, 
-    #FF00FF, 
-    #00FF00, 
-    #FFFF00, 
-    #00FFFF);
-  background-size: 400% 100%;
-  animation: moveLine 3s linear infinite;
-  box-shadow: 0 0 10px #00FFFF;
-}
-
-/* Animation for running effect */
-@keyframes moveLine {
-  0% { background-position: 0% 0; }
-  100% { background-position: 100% 0; }
-}
-
-
-.data-container{
-    height: 300px;
-    width: 100%;
-}
-
-
-.logo-footer{
-  
-    height: 200px;
-    width: 100%;
+.section-footer{
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 50px;
+    background-color: #040015;
+    height: 600px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.footer-page1{
+
+/* background-color: #8b949e;   */
+  height: auto;
+    width: 530px;
+    color: #f0f6fc; 
+    position: relative;
     
+
 }
 
-.logo-footer img{
-    margin-top: 150px;
-    height: 300px;
-    width: 400px;
-    margin-bottom:150px;
-}
-
-.footer-text{
-    height: 400px;
+.logo-codelibrary{
+    height: auto;
     width: 100%;
+    position: relative;
+}
+
+.logo-codelibrary img{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+}
+
+
+.logo-codelibrary h3,p{
+position: absolute;
+top: 150px;
+left: 50px;
+
+}
+
+.footer-button{
+    height: 60px;
+    width: 150px;
+    background-color:#040015;
+    margin-top: 210px;
+    margin-left: 50px;
+    border-radius: 8px;
+    color: #f0f6fc;
+    border: 1px solid #f0f6fc;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    animation: none;
+    transition: all 0.1s ease;
+}
+
+
+.footer-button:hover{
+    border: 2px solid white;
+}
+
+
+
+
+.footer-page2{
     display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 200px;
-    font-family: Arial, Helvetica, sans-serif;
+    gap: 100px;
+    color: #9198A1;
+    padding-top: 45px;
+}
+
+
+.text-all ul li{
+    list-style: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.footer-section2{
+    height: 68px;
+    background-color: #151b23;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.icons1{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    color: #9198A1;
+    font-size: 14px;
+    cursor: pointer;
+    
 
 }
 
-.footer-text h3{
-    font-size: 18px;
+
+.icons2{
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    
+
 }
 
-.apply_to_all{
-    text-align: center;
-}
-
-.end-footer{
-height: 100px;
-width: 100%;
-color: #ffffff;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 5px;
-flex-direction: column;
-background-color: #040015;
-
+.icons2 a{
+    color: #9198A1;
 }
