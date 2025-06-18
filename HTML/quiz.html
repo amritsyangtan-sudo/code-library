@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="quiz-box">
+        <div id="quiz-container">
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <button onclick="submitAnswer()">Submit</button>
+        </div>
+        <div id="result" style="display:none; margin-top: 20px;"></div>
+    </div>
+</body>
+<script>
+    let quizData = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    async function loadQuizData() {
+        try {
+            const response = await fetch('../js/quiz.json');
+            quizData = await response.json();
+            loadQuestion();
+        } catch (error) {
+            console.error("Failed to load quiz data:", error);
+            document.getElementById("quiz-container").innerHTML = "<p>Could not load quiz.</p>";
+        }
+    }
+
+    function loadQuestion() {
+        const current = quizData[currentQuestionIndex];
+        document.getElementById("question").textContent = current.question;
+
+        const optionsContainer = document.getElementById("options");
+        optionsContainer.innerHTML = "";
+
+        current.options.forEach((option, index) => {
+            const label = document.createElement("label");
+            label.innerHTML = `
+        <input type="radio" name="option" value="${index}"> ${option}
+      `;
+            optionsContainer.appendChild(label);
+        });
+    }
+
+    loadQuizData();
+</script>
+
+</html>
